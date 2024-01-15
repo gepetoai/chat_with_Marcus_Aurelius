@@ -66,7 +66,10 @@ messages = []
 
 while input != "Exit":
     print("###################################################")
-    inbound = input("Marcus: " + outbound + "\n###################################################"+'\nYou: ')
+    inbound = input("Marcus: " 
+                    + outbound 
+                    + "\n###################################################"
+                    +'\nYou: ')
     
     if input == "Exit":
         break
@@ -92,6 +95,6 @@ while input != "Exit":
         messages.append({"role": "assistant", "content": outbound})
 
     else:
-        print("Sorry, something went wrong. Please try again.")
+        print("My apologies, the battlefield calls. Until we meet again. Glory to Rome!")
         break
 
