@@ -28,7 +28,7 @@ from langchain_community.vectorstores import FAISS #FAISS stores them for simila
 def initialize_vdb():
     '''initialize an FAISS in-RAM vector database'''
     dir_path = os.path.dirname(os.path.realpath(__file__))
-
+    ic("......Initializing FAISS Vector Database")
     # Construct the path to the .txt file, in this case, the book Meditations by Marcus Aurelius
     txt_file_path = os.path.join(dir_path, 'meditations.txt')
 
