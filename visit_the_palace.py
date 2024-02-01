@@ -9,7 +9,7 @@ outbound = "Good day young one. How may I be of aid?"
 inbound = ""
 messages = []
 
-while input != "Exit":
+while inbound != "Exit":
     print("###################################################")
     inbound = input("Marcus: " 
                     + outbound 

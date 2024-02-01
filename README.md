@@ -1,5 +1,16 @@
 # Chat with Marcus Aurelius
+This bot has a simple system prompt and does a basic similarity search on Meditations, the famous book by Stoic Roman Emperor Marcus Aurelius.
 
+# Logical Flow
+1. Get user inbound message
+2. Append to message history
+3. Perform similarity search on inbound message to get examples
+4. Append examples to system prompt
+5. Generate outbound message
+6. Append outbound message to message history
+7. Send to user
+
+# Run Commands
 1. in Terminal: pip install -r requirements.txt
 2. in Terminal: export OPENAI_API_KEY=="YOUR_API_KEY"
 3. in Terminal: python3 visit_the_palace.py

@@ -34,7 +34,7 @@ def initialize_vdb():
     loader = TextLoader(txt_file_path)
     documents = loader.load()
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=600, chunk_overlap=50, length_function = len, is_separator_regex = False)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50, length_function = len, is_separator_regex = False)
     docs = text_splitter.split_documents(documents)
 
     embeddings = OpenAIEmbeddings()
