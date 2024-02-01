@@ -1,21 +1,22 @@
 from openai import OpenAI
+from icecream import ic
 import os
-import logging
-import time
 
 #########OPENAI API#########
-openai = OpenAI()
+openai = OpenAI(max_retries = 5)
 
 def generate_response(messages, model):
     '''just getting a response from openai. try 5x'''
-    for _ in range(5):
-        try:
-            response = openai.chat.completions.create(model=model, messages=messages, max_tokens=200, temperature=0)
-            return response
-        except Exception as e:
-            logging.exception(f"Exception occurred: {e}")
-    else:
+    
+    try:
+        response = openai.chat.completions.create(model=model, messages=messages, max_tokens=200, temperature=0)
+        ic("......OpenAI Response Generated")
+        return response
+    
+    except Exception as e:
+        ic(f"Exception occurred: {e}")
         return False
+
 
 
 #########LANGCHAIN EXAMPLES PULLER #########
@@ -40,7 +41,7 @@ def initialize_vdb():
     embeddings = OpenAIEmbeddings()
 
     db = FAISS.from_documents(docs, embeddings)
-    print('db initialized')
+    ic("......Vector Database Initialized")
     return db
 
 
@@ -53,6 +54,7 @@ def find_examples(db, query, k=5):
     for doc in docs:
        examples += f'\n\nEXAMPLE {i}:\n' + doc.page_content
        i+=1
+    ic("......Similarity Search Results Retreived")
     return examples
 
 

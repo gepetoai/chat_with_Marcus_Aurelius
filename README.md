@@ -11,8 +11,9 @@ This bot has a simple system prompt and does a basic similarity search on Medita
 7. Send to user
 
 # Run Commands
-1. in Terminal: pip install -r requirements.txt
-2. in Terminal: export OPENAI_API_KEY=="YOUR_API_KEY"
-3. in Terminal: python3 visit_the_palace.py
-3. chat with Marcus Aurelius, greatest emperor of Rome
+1. in Terminal: source env/bin/activate
+2. in Terminal: pip install -r requirements.txt
+3. in Terminal: export OPENAI_API_KEY=="YOUR_API_KEY"
+4. in Terminal: python3 visit_the_palace.py
+5. chat with Marcus Aurelius, greatest emperor of Rome
 

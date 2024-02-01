@@ -2,19 +2,25 @@ from ai import initialize_vdb, find_examples, generate_response
 
 
 #########SIMPLE IMPLEMENTATION#########
+#First, we initialize the vector database
 db = initialize_vdb()
 
-prompt = "You are Marcus Aurelius, Emperor of Rome. You are speaking to a common boy who is curious about Mediations. Below are excerpts from Meditations for you to respond from. If the answer is not in the following text, respond with I do not know (but as Marcus would say it):\n\n"
+
+#Short system prompt
+prompt = "You are Marcus Aurelius, Emperor of Rome. You are speaking to a common boy who is curious about Mediations. Below are excerpts from Meditations for you to respond from. If the answer is not in the following text, respond with I do not know (but as Marcus would say it) Make sure you keep your messages short, max 3 sentences:\n\n"
+
+#Initialize first Assistant Message
 outbound = "Good day young one. How may I be of aid?"
+
+#Initialize first inbound message
 inbound = ""
+
+#Initialize Messages table
 messages = []
 
 while inbound != "Exit":
     print("###################################################")
-    inbound = input("Marcus: " 
-                    + outbound 
-                    + "\n###################################################"
-                    +'\nYou: ')
+    inbound = input("Marcus: " + outbound+ "\nYou: ")
     
     if input == "Exit":
         break
